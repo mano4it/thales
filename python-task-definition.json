@@ -1,8 +1,8 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:870787820319:task-definition/python-task-definition:1",
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:870787820319:task-definition/python-task-definition:2",
     "containerDefinitions": [
         {
-            "name": "python-container",
+            "name": "my-app-python",
             "image": "870787820319.dkr.ecr.ap-southeast-1.amazonaws.com/my-app-python",
             "cpu": 0,
             "portMappings": [
@@ -16,10 +16,8 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
@@ -27,8 +25,7 @@
                     "awslogs-group": "/ecs/python-task-definition",
                     "awslogs-region": "ap-southeast-1",
                     "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
+                }
             }
         }
     ],
@@ -36,7 +33,7 @@
     "taskRoleArn": "arn:aws:iam::870787820319:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::870787820319:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 2,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -82,7 +79,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-10-12T06:53:05.837Z",
+    "registeredAt": "2023-10-12T13:38:35.329Z",
     "registeredBy": "arn:aws:iam::870787820319:root",
     "tags": []
 }

@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:870787820319:task-definition/python-task-definition:2",
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:870787820319:task-definition/definition:1",
     "containerDefinitions": [
         {
-            "name": "my-app-python",
+            "name": "myapp",
             "image": "870787820319.dkr.ecr.ap-southeast-1.amazonaws.com/my-app-python",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "python-container-80-tcp",
+                    "name": "myapp-80-tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
@@ -16,24 +16,27 @@
             ],
             "essential": true,
             "environment": [],
+            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
+            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/python-task-definition",
+                    "awslogs-group": "/ecs/definition",
                     "awslogs-region": "ap-southeast-1",
                     "awslogs-stream-prefix": "ecs"
-                }
+                },
+                "secretOptions": []
             }
         }
     ],
-    "family": "python-task-definition",
+    "family": "definition",
     "taskRoleArn": "arn:aws:iam::870787820319:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::870787820319:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 2,
+    "revision": 1,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -79,7 +82,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-10-12T13:38:35.329Z",
+    "registeredAt": "2023-10-12T14:00:41.906Z",
     "registeredBy": "arn:aws:iam::870787820319:root",
     "tags": []
 }
